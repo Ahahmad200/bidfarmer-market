@@ -226,24 +226,5 @@ document.getElementById('menu-toggle').addEventListener('click', () => {
   document.getElementById('nav-links').classList.toggle('open');
 });
 
-// ===== NAV LINKS (top menu + footer) =====
-document.querySelectorAll('[data-nav]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const target = link.dataset.nav;
-    if (target === 'home')     showView(homeView);
-    if (target === 'browse') { showView(browseView); renderListings(); }
-    if (target === 'add')      showView(addView);
-    if (target === 'register') showView(registerView);
-    // close mobile menu
-    document.getElementById('nav-links').classList.remove('open');
-  });
-});
-
-// ===== MOBILE MENU TOGGLE =====
-document.getElementById('menu-toggle').addEventListener('click', () => {
-  document.getElementById('nav-links').classList.toggle('open');
-});
-
 // ===== INITIAL LOAD =====
 loadListings();
