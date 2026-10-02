@@ -14,24 +14,24 @@
   </header>
 
   <main>
-    <!-- ===== HOME VIEW ===== -->
+    <!-- ===== HOME ===== -->
     <section id="home-view">
       <h2>Welcome!</h2>
-      <p>This is where farmers will list their birds and buyers will find them.</p>
+      <p>Buy and sell pigeons, fowls, broilers and exotic birds directly.</p>
 
-      <h3>What you'll find here soon:</h3>
+      <h3>What you'll find here:</h3>
       <ul>
-        <li>Pigeons, fowls, broilers, exotic birds</li>
+        <li>Real listings from local farmers</li>
         <li>Fair prices set by farmers</li>
-        <li>Safe online payment</li>
-        <li>Reliable delivery</li>
+        <li>Search by type, location, and price</li>
+        <li>Safe online payment (coming soon)</li>
       </ul>
 
       <button id="btn-register">Register as Farmer</button>
       <button id="btn-browse" class="secondary">Browse Birds</button>
     </section>
 
-    <!-- ===== REGISTRATION VIEW (hidden by default) ===== -->
+    <!-- ===== REGISTRATION ===== -->
     <section id="register-view" class="hidden">
       <button class="back-btn" id="btn-back-register">← Back</button>
       <h2>Farmer Registration</h2>
@@ -50,8 +50,55 @@
           <input type="text" id="farmer-location" required>
         </label>
 
-        <label>Type of Birds You Sell
-          <select id="farmer-birdtype">
+        <button type="submit">Submit Registration</button>
+      </form>
+
+      <p id="register-message" class="message"></p>
+    </section>
+
+    <!-- ===== BROWSE ===== -->
+    <section id="browse-view" class="hidden">
+      <button class="back-btn" id="btn-back-browse">← Back</button>
+      <h2>Available Birds</h2>
+
+      <!-- Add Listing Button -->
+      <button id="btn-add-listing" style="margin-bottom:20px;">+ Add a Listing</button>
+
+      <!-- Filter bar -->
+      <div class="filter-bar">
+        <input type="text" id="search-text" placeholder="🔍 Search by name...">
+        <select id="filter-type">
+          <option value="">All Types</option>
+          <option>Pigeons</option>
+          <option>Fowls</option>
+          <option>Broilers</option>
+          <option>Exotic Pigeons</option>
+          <option>Exotic Fowls</option>
+        </select>
+        <input type="text" id="filter-location" placeholder="📍 Location">
+        <input type="number" id="filter-max-price" placeholder="💰 Max price">
+      </div>
+
+      <!-- Listings go here -->
+      <div id="listing-grid" class="listing-grid"></div>
+      <p id="no-results" class="hidden" style="text-align:center; color:#777; margin-top:20px;">
+        No birds match your search. Try different filters.
+      </p>
+    </section>
+
+    <!-- ===== ADD LISTING ===== -->
+    <section id="add-view" class="hidden">
+      <button class="back-btn" id="btn-back-add">← Back</button>
+      <h2>Add a New Listing</h2>
+      <p>Describe what you're selling so buyers can find it.</p>
+
+      <form id="listing-form">
+        <label>Bird Name / Title
+          <input type="text" id="list-title" placeholder="e.g. Racing Pigeons" required>
+        </label>
+
+        <label>Type
+          <select id="list-type" required>
             <option>Pigeons</option>
             <option>Fowls</option>
             <option>Broilers</option>
@@ -60,43 +107,34 @@
           </select>
         </label>
 
-        <button type="submit">Submit Registration</button>
+        <label>Quantity
+          <input type="number" id="list-quantity" min="1" required>
+        </label>
+
+        <label>Price per Bird (₦)
+          <input type="number" id="list-price" min="0" step="100" required>
+        </label>
+
+        <label>Location
+          <input type="text" id="list-location" required>
+        </label>
+
+        <label>Your Name (Farmer)
+          <input type="text" id="list-farmer" required>
+        </label>
+
+        <label>Your Phone
+          <input type="tel" id="list-phone" required>
+        </label>
+
+        <label>Photo URL (optional)
+          <input type="url" id="list-photo" placeholder="https://...">
+        </label>
+
+        <button type="submit">Post Listing</button>
       </form>
 
-      <p id="register-message" class="message"></p>
-    </section>
-
-    <!-- ===== BROWSE VIEW (hidden by default) ===== -->
-    <section id="browse-view" class="hidden">
-      <button class="back-btn" id="btn-back-browse">← Back</button>
-      <h2>Available Birds</h2>
-      <p>Sample listings — real ones come in Step 5.</p>
-
-      <div class="listing-grid">
-        <div class="listing-card">
-          <h4>Racing Pigeons</h4>
-          <p><strong>Quantity:</strong> 15</p>
-          <p><strong>Price:</strong> ₦3,500 each</p>
-          <p><strong>Location:</strong> Kano</p>
-          <button>Contact Farmer</button>
-        </div>
-
-        <div class="listing-card">
-          <h4>Broilers (6 weeks)</h4>
-          <p><strong>Quantity:</strong> 40</p>
-          <p><strong>Price:</strong> ₦4,200 each</p>
-          <p><strong>Location:</strong> Ibadan</p>
-          <button>Contact Farmer</button>
-        </div>
-
-        <div class="listing-card">
-          <h4>Exotic Fowl Pair</h4>
-          <p><strong>Quantity:</strong> 4</p>
-          <p><strong>Price:</strong> ₦12,000 each</p>
-          <p><strong>Location:</strong> Lagos</p>
-          <button>Contact Farmer</button>
-        </div>
-      </div>
+      <p id="listing-message" class="message"></p>
     </section>
 
   </main>
