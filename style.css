@@ -230,3 +230,43 @@ form button {
   padding: 10px;
   font-size: 0.9rem;
 }
+/* ===== FILTER BAR ===== */
+.filter-bar {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.filter-bar input,
+.filter-bar select {
+  padding: 11px;
+  border: 2px solid #c8e6c9;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: #f9fdf9;
+}
+
+.filter-bar input:focus,
+.filter-bar select:focus {
+  outline: none;
+  border-color: #2e7d32;
+  background: white;
+}
+
+/* ===== LISTING CARD PHOTO ===== */
+.listing-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* ===== MOBILE: stack filters ===== */
+@media (max-width: 700px) {
+  .filter-bar {
+    grid-template-columns: 1fr;
+  }
+}
