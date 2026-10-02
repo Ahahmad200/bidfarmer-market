@@ -4,35 +4,104 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BirdMarket — Buy & Sell Birds Directly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>🐦 BirdMarket</h1>
-    <p>Connecting bird farmers directly to buyers</p>
-  </header>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a class="logo" href="#" data-nav="home">
+        <span class="logo-icon">🐦</span> BirdMarket
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menu">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#" data-nav="home">Home</a></li>
+        <li><a href="#" data-nav="browse">Browse</a></li>
+        <li><a href="#" data-nav="add">Sell</a></li>
+        <li><a href="#" class="btn-nav-primary" data-nav="register">Get Started</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <main>
+
     <!-- ===== HOME ===== -->
     <section id="home-view">
-      <h2>Welcome!</h2>
-      <p>Buy and sell pigeons, fowls, broilers and exotic birds directly.</p>
+      <div class="hero">
+        <div class="hero-content">
+          <span class="hero-badge">🐔 Trusted by local farmers</span>
+          <h1>Buy & sell birds <span class="accent">directly</span> from farmers.</h1>
+          <p>No middlemen. No unfair prices. Just real farmers connecting with real buyers — pigeons, fowls, broilers, and exotic birds.</p>
+          <div class="hero-buttons">
+            <button id="btn-browse" class="btn-primary">Browse Birds</button>
+            <button id="btn-register" class="btn-outline">Sell Your Birds</button>
+          </div>
+        </div>
 
-      <h3>What you'll find here:</h3>
-      <ul>
-        <li>Real listings from local farmers</li>
-        <li>Fair prices set by farmers</li>
-        <li>Search by type, location, and price</li>
-        <li>Safe online payment (coming soon)</li>
-      </ul>
+        <div class="hero-visual">
+          <div class="hero-card hero-card-1">
+            <div class="hero-card-icon">🕊️</div>
+            <div>
+              <strong>Racing Pigeons</strong>
+              <span>₦3,500 · Kano</span>
+            </div>
+          </div>
+          <div class="hero-card hero-card-2">
+            <div class="hero-card-icon">🐔</div>
+            <div>
+              <strong>Broilers</strong>
+              <span>₦4,200 · Ibadan</span>
+            </div>
+          </div>
+          <div class="hero-card hero-card-3">
+            <div class="hero-card-icon">🦜</div>
+            <div>
+              <strong>Exotic Fowls</strong>
+              <span>₦12,000 · Lagos</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <button id="btn-register">Register as Farmer</button>
-      <button id="btn-browse" class="secondary">Browse Birds</button>
+      <div class="stats">
+        <div class="stat"><strong>Direct</strong><span>Farmer-to-buyer</span></div>
+        <div class="stat"><strong>0%</strong><span>Middleman fees</span></div>
+        <div class="stat"><strong>Fair</strong><span>You set the price</span></div>
+      </div>
+
+      <div class="features-section">
+        <h2>Why farmers choose BirdMarket</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <div class="feature-icon">💰</div>
+            <h3>Fair Prices</h3>
+            <p>You set your own price. No one forces you to sell low.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🔒</div>
+            <h3>Safe Payments</h3>
+            <p>Secure escrow so both sides are protected.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🚚</div>
+            <h3>Reliable Delivery</h3>
+            <p>Get birds delivered, or arrange pickup nearby.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📱</div>
+            <h3>Easy to Use</h3>
+            <p>Simple forms that work on any phone.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- ===== REGISTRATION ===== -->
-    <section id="register-view" class="hidden">
+    <!-- ===== REGISTER ===== -->
+    <section id="register-view" class="hidden page-section">
       <button class="back-btn" id="btn-back-register">← Back</button>
       <h2>Farmer Registration</h2>
       <p>Fill in your details to start selling your birds.</p>
@@ -41,30 +110,25 @@
         <label>Full Name
           <input type="text" id="farmer-name" required>
         </label>
-
         <label>Phone Number
           <input type="tel" id="farmer-phone" required>
         </label>
-
         <label>Location (Town / City)
           <input type="text" id="farmer-location" required>
         </label>
-
-        <button type="submit">Submit Registration</button>
+        <button type="submit" class="btn-primary">Submit Registration</button>
       </form>
 
       <p id="register-message" class="message"></p>
     </section>
 
     <!-- ===== BROWSE ===== -->
-    <section id="browse-view" class="hidden">
+    <section id="browse-view" class="hidden page-section">
       <button class="back-btn" id="btn-back-browse">← Back</button>
       <h2>Available Birds</h2>
 
-      <!-- Add Listing Button -->
-      <button id="btn-add-listing" style="margin-bottom:20px;">+ Add a Listing</button>
+      <button id="btn-add-listing" class="btn-primary">+ Add a Listing</button>
 
-      <!-- Filter bar -->
       <div class="filter-bar">
         <input type="text" id="search-text" placeholder="🔍 Search by name...">
         <select id="filter-type">
@@ -79,7 +143,6 @@
         <input type="number" id="filter-max-price" placeholder="💰 Max price">
       </div>
 
-      <!-- Listings go here -->
       <div id="listing-grid" class="listing-grid"></div>
       <p id="no-results" class="hidden" style="text-align:center; color:#777; margin-top:20px;">
         No birds match your search. Try different filters.
@@ -87,7 +150,7 @@
     </section>
 
     <!-- ===== ADD LISTING ===== -->
-    <section id="add-view" class="hidden">
+    <section id="add-view" class="hidden page-section">
       <button class="back-btn" id="btn-back-add">← Back</button>
       <h2>Add a New Listing</h2>
       <p>Describe what you're selling so buyers can find it.</p>
@@ -96,7 +159,6 @@
         <label>Bird Name / Title
           <input type="text" id="list-title" placeholder="e.g. Racing Pigeons" required>
         </label>
-
         <label>Type
           <select id="list-type" required>
             <option>Pigeons</option>
@@ -106,32 +168,25 @@
             <option>Exotic Fowls</option>
           </select>
         </label>
-
         <label>Quantity
           <input type="number" id="list-quantity" min="1" required>
         </label>
-
         <label>Price per Bird (₦)
           <input type="number" id="list-price" min="0" step="100" required>
         </label>
-
         <label>Location
           <input type="text" id="list-location" required>
         </label>
-
         <label>Your Name (Farmer)
           <input type="text" id="list-farmer" required>
         </label>
-
         <label>Your Phone
           <input type="tel" id="list-phone" required>
         </label>
-
         <label>Photo URL (optional)
           <input type="url" id="list-photo" placeholder="https://...">
         </label>
-
-        <button type="submit">Post Listing</button>
+        <button type="submit" class="btn-primary">Post Listing</button>
       </form>
 
       <p id="listing-message" class="message"></p>
@@ -139,8 +194,28 @@
 
   </main>
 
-  <footer>
-    <p>© 2025 BirdMarket. Built step by step.</p>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">🐦</span> BirdMarket
+        <p>Connecting bird farmers directly to buyers.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Marketplace</h4>
+        <a href="#" data-nav="browse">Browse Birds</a>
+        <a href="#" data-nav="add">Sell Birds</a>
+        <a href="#" data-nav="register">Register</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@birdmarket.com">hello@birdmarket.com</a>
+        <a href="tel:+2348000000000">+234 800 000 0000</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 BirdMarket. Built step by step.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
