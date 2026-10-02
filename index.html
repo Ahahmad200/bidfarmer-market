@@ -14,24 +14,97 @@
   </header>
 
   <main>
-    <h2>Welcome!</h2>
-    <p>This is where farmers will list their birds and buyers will find them.</p>
+    <!-- ===== HOME VIEW ===== -->
+    <section id="home-view">
+      <h2>Welcome!</h2>
+      <p>This is where farmers will list their birds and buyers will find them.</p>
 
-    <h3>What you'll find here soon:</h3>
-    <ul>
-      <li>Pigeons, fowls, broilers, exotic birds</li>
-      <li>Fair prices set by farmers</li>
-      <li>Safe online payment</li>
-      <li>Reliable delivery</li>
-    </ul>
+      <h3>What you'll find here soon:</h3>
+      <ul>
+        <li>Pigeons, fowls, broilers, exotic birds</li>
+        <li>Fair prices set by farmers</li>
+        <li>Safe online payment</li>
+        <li>Reliable delivery</li>
+      </ul>
 
-   <button>Register as Farmer</button>
-<button class="secondary">Browse Birds</button>
+      <button id="btn-register">Register as Farmer</button>
+      <button id="btn-browse" class="secondary">Browse Birds</button>
+    </section>
+
+    <!-- ===== REGISTRATION VIEW (hidden by default) ===== -->
+    <section id="register-view" class="hidden">
+      <button class="back-btn" id="btn-back-register">← Back</button>
+      <h2>Farmer Registration</h2>
+      <p>Fill in your details to start selling your birds.</p>
+
+      <form id="farmer-form">
+        <label>Full Name
+          <input type="text" id="farmer-name" required>
+        </label>
+
+        <label>Phone Number
+          <input type="tel" id="farmer-phone" required>
+        </label>
+
+        <label>Location (Town / City)
+          <input type="text" id="farmer-location" required>
+        </label>
+
+        <label>Type of Birds You Sell
+          <select id="farmer-birdtype">
+            <option>Pigeons</option>
+            <option>Fowls</option>
+            <option>Broilers</option>
+            <option>Exotic Pigeons</option>
+            <option>Exotic Fowls</option>
+          </select>
+        </label>
+
+        <button type="submit">Submit Registration</button>
+      </form>
+
+      <p id="register-message" class="message"></p>
+    </section>
+
+    <!-- ===== BROWSE VIEW (hidden by default) ===== -->
+    <section id="browse-view" class="hidden">
+      <button class="back-btn" id="btn-back-browse">← Back</button>
+      <h2>Available Birds</h2>
+      <p>Sample listings — real ones come in Step 5.</p>
+
+      <div class="listing-grid">
+        <div class="listing-card">
+          <h4>Racing Pigeons</h4>
+          <p><strong>Quantity:</strong> 15</p>
+          <p><strong>Price:</strong> ₦3,500 each</p>
+          <p><strong>Location:</strong> Kano</p>
+          <button>Contact Farmer</button>
+        </div>
+
+        <div class="listing-card">
+          <h4>Broilers (6 weeks)</h4>
+          <p><strong>Quantity:</strong> 40</p>
+          <p><strong>Price:</strong> ₦4,200 each</p>
+          <p><strong>Location:</strong> Ibadan</p>
+          <button>Contact Farmer</button>
+        </div>
+
+        <div class="listing-card">
+          <h4>Exotic Fowl Pair</h4>
+          <p><strong>Quantity:</strong> 4</p>
+          <p><strong>Price:</strong> ₦12,000 each</p>
+          <p><strong>Location:</strong> Lagos</p>
+          <button>Contact Farmer</button>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
     <p>© 2025 BirdMarket. Built step by step.</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
